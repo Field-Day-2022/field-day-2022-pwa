@@ -61,13 +61,15 @@ const NewDataEntry = (props) => {
                 for (const prop in arthroForm.data) {
                     if (arthroForm.data.hasOwnProperty(prop)) {
                         if (
-                            prop !== CONSTANTS.FENCE_TRAP &&
-                            prop !== CONSTANTS.PREDATOR &&
-                            prop !== CONSTANTS.DATE_MODIFIED &&
-                            prop !== CONSTANTS.DATE_CREATED &&
-                            prop !== CONSTANTS.PROJECT_ID &&
-                            prop !== CONSTANTS.FORM_ID &&
-                            prop !== CONSTANTS.COMMENTS
+                            ![
+                                CONSTANTS.FENCE_TRAP,
+                                CONSTANTS.PREDATOR,
+                                CONSTANTS.DATE_MODIFIED,
+                                CONSTANTS.DATE_CREATED,
+                                CONSTANTS.PROJECT_ID,
+                                CONSTANTS.FORM_ID,
+                                CONSTANTS.COMMENTS,
+                            ].includes(prop)
                         ) {
                             resultArr.push(arthroForm.data[prop]);
                         }

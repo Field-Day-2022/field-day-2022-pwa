@@ -10,7 +10,7 @@ import _ from 'lodash';
 import './FieldDayFormSelectionForm.css';
 import '../../App.css';
 
-const NewDataEntry = (props) => {
+export default (props) => {
     const dispatch = useDispatch();
 
     //Local State
@@ -229,7 +229,8 @@ const NewDataEntry = (props) => {
                     </Row>
                 </Container>
             </div>
-            <EndModal show={showEndSessionModal}
+            <EndModal
+                show={showEndSessionModal}
                 title="Ending a Session?"
                 bodyText="You are about to end a session, are you sure you want to continue?"
                 cancelText="No"
@@ -240,5 +241,3 @@ const NewDataEntry = (props) => {
         </div>
     );
 };
-
-export default NewDataEntry;
